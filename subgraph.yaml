@@ -10,7 +10,7 @@ dataSources:
     source:
       address: '0xB598b78b888d81dDc6f8E5A4e0d755DfaDbFcf97'
       abi: Donut
-      startBlock: 10364117
+      startBlock: 10382228
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
