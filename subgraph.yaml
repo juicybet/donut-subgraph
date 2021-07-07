@@ -8,7 +8,7 @@ dataSources:
     name: Donut
     network: chapel
     source:
-      address: '0x37422f7738D2d473221B807cdB1410A502b6C733'
+      address: '0xB598b78b888d81dDc6f8E5A4e0d755DfaDbFcf97'
       abi: Donut
       startBlock: 10364117
     mapping:
