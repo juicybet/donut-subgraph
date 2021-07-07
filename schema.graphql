@@ -1,0 +1,18 @@
+type Transaction @entity {
+  id: ID!
+  block: BigInt!
+  timestamp: BigInt!
+  hash: Bytes!
+}
+
+type DonutBet @entity {
+  id: ID!
+  bet: Int!
+  creator: Bytes!
+  value: BigInt!
+  hasWon: Boolean!
+  createdTx: Transaction!
+
+  claimedTx: Transaction
+  rewardReceived: BigInt
+}

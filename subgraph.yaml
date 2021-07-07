@@ -1,0 +1,29 @@
+specVersion: 0.0.2
+description: Juicy.bet Donut bets
+repository: https://gitlab.com/juicybet/donut-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Donut
+    network: chapel
+    source:
+      address: '0x37422f7738D2d473221B807cdB1410A502b6C733'
+      abi: Donut
+      startBlock: 10364117
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - BetPlaced
+        - BetClaimed
+      abis:
+        - name: Donut
+          file: ../contracts/artifacts/contracts/Donut.sol/Donut.json
+      eventHandlers:
+        - event: BetPlaced(uint64,uint8,address,uint256,uint256)
+          handler: handleBetPlaced
+        - event: BetClaimed(uint64)
+          handler: handleBetClaimed
+      file: ./src/mapping.ts
